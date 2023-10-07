@@ -28,7 +28,7 @@ cd weather-apis
 # Once docker in running run the docker compose command
 docker compose up --build
 
-# This will build the project and run the tests. Go to localhost to test apis in browser
+# This will build the project and run the tests. Go to localhost to test apis in browser with swagger
 
 http://127.0.0.1:8000/docs 
 ```
