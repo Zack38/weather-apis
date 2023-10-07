@@ -1,6 +1,6 @@
 version: '3'
 services:
-  weather-apis:
+  gateway-apis:
     build:
       context: .
       dockerfile: Dockerfile
@@ -9,13 +9,13 @@ services:
       - "8000:8000"
     volumes:
       - ./app:/app
-    container_name: weather-apis  # Assign a name to the API container
+    container_name: gateway-apis  # Assign a name to the API container
 
   test-container:
     build:
       context: .  # Build from the directory where your tests are located
       dockerfile: app/tests/Dockerfile
     links:
-      - weather-apis:weather-apis  # Link to the API container
-    command: pytest  # Specify the command to run tests
+      - gateway-apis:gateway-apis  # Link to the API container
+    command: pytest -rx # Specify the command to run tests
 
