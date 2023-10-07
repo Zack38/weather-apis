@@ -1,0 +1,21 @@
+version: '3'
+services:
+  weather-apis:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: sh -c "uvicorn main:app --reload --host 0.0.0.0 --port 8000"
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./app:/app
+    container_name: weather-apis  # Assign a name to the API container
+
+  test-container:
+    build:
+      context: .  # Build from the directory where your tests are located
+      dockerfile: app/tests/Dockerfile
+    links:
+      - weather-apis:weather-apis  # Link to the API container
+    command: pytest  # Specify the command to run tests
+
