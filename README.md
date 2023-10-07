@@ -35,21 +35,27 @@ http://127.0.0.1:8000/docs
 
 # Project Structure
 ```
-my_fastapi_project/
+weather-apis/
 ├── app/
 │   ├── __init__.py
 │   ├── main.py
+│   ├── conftest.py
+│   ├── requirements.txt
+│   ├── seattle-weather.csv
 │   ├── api/
 │   │   ├── __init__.py
-│   │   ├── api_v1.py
-│   ├── data/
-│   │   ├── __init__.py
-│   │   ├── data_loader.py
+│   │   ├── weather.py
 ├── tests/
 │   ├── __init__.py
 │   ├── test_app.py
+│   ├── Dockerfile
+│   ├── requirements.txt
 ├── pytest.ini
 ├── requirements.txt
 ├── docker-compose.yml
+├── Dockerfile
+├── README.md
+├── .dockerignore
+├── .gitignore
 ```
 
