@@ -16,20 +16,21 @@ Description of your project goes here.
 Describe how to set up and install your project locally. Include any dependencies and environment setup steps.
 
 ```bash
+
+# make sure you have docker and git installed on your computer
+
 # Clone the repository
-git clone https://github.com/yourusername/my-fastapi-project.git
+git clone https://github.com/Zack38/weather-apis.git
 
 # Change into the project directory
-cd my-fastapi-project
+cd weather-apis
 
-# Create a virtual environment (optional but recommended)
-python -m venv venv
+# Once docker in running run the docker compose command
+docker compose up --build
 
-# Activate the virtual environment
-source venv/bin/activate  # On Windows, use: venv\Scripts\activate
+# This will build the project and run the tests. Go to localhost to test apis in browser
 
-# Install project dependencies
-pip install -r requirements.txt
+http://127.0.0.1:8000/docs 
 ```
 
 # Project Structure
